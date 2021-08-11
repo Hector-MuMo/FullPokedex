@@ -21,15 +21,11 @@ const Pokedex = () => {
   const [minPageLimit, setMinPageLimit] = useState(0);
   const [pokePerPage, setPokePerPage] = useState(0);
   const [isBtnUse, setisBtnUse] = useState(false);
-  const [loader, setLoader] = useState(false);
-
-  console.log(loader);
 
   //First Fetch of Pokemon Data
   useEffect(() => {
     const getData = async () => {
       try {
-        setLoader(true);
         if (type) {
           const data = await fetch(`https://pokeapi.co/api/v2/type/${type}`),
             dataJson = await data.json();
@@ -50,7 +46,6 @@ const Pokedex = () => {
     };
 
     getData();
-    setLoader(false);
   }, [type]);
 
   //Submit input data
