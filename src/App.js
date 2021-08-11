@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/Home";
+import Pokedex from "./pages/Pokedex";
+import PokeEncounters from "./pages/PokeEncounters";
+import PokemonId from "./pages/PokemonId";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+          <Route exact path={"/"}>
+            <Home />
+          </Route>
+          <ProtectedRoute exact path={"/pokedex"}>
+            <Pokedex />
+          </ProtectedRoute>
+          <ProtectedRoute exact path={"/pokedex/pokemon/:pokeID"}>
+            <PokemonId />
+          </ProtectedRoute>
+          <Route
+            path="/pokedex/pokemon/:pokeID/encounters"
+            component={PokeEncounters}
+          />
+        </Switch>
+      </Router>
     </div>
   );
 }

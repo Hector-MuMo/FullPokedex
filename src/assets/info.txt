@@ -1,0 +1,8 @@
+Imagenes de Pokemons alta calidad va el 001 al 889
+https://assets.pokemon.com/assets/cms2/img/pokedex/detail/500.png
+
+url pokeApi
+https://pokeapi.co/api/v2/pokemon/898
+paginación
+https://pokeapi.co/api/v2/pokemon
+"https://pokeapi.co/api/v2/pokemon?offset=10&limit=10"

@@ -1,0 +1,23 @@
+.pokedex-container .pagination {
+  grid-column: 2 / span 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.pagination > button {
+  padding: 8px 15px;
+  margin: 10px;
+  margin-top: 20px;
+  background-color: #2a4396;
+  border: solid 0.2px #fdc105;
+  border-radius: 5px;
+  color: #fdc105;
+  cursor: pointer;
+}
+
+.pagination > .active {
+  color: #2a4396;
+  background-color: #fdc105;
+}

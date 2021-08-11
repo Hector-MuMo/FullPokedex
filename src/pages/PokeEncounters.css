@@ -1,0 +1,83 @@
+.poke-encounters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  min-width: 750px;
+  height: auto;
+  margin: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: solid 4px #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 4px;
+  border-radius: 50%;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.poke-encounters > h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-family: inherit;
+  color: #fdc105;
+  text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
+}
+
+.poke-encounters > figure {
+  width: 200px;
+  animation-name: pokemon;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation-direction: alternate;
+}
+
+.poke-encounters > p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-family: inherit;
+  color: #fdc105;
+  text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
+}
+
+.poke-encounters > .poke-stats {
+  display: flex;
+  max-width: 400px;
+  max-height: 250px;
+  padding: 10px;
+  margin: 20px 0;
+  color: #ddd;
+  background: #2a4396;
+  border: solid 2px #fdc105;
+  border-radius: 5px;
+  overflow-y: auto;
+}
+
+.poke-encounters > .poke-stats > ul {
+  list-style: none;
+}
+
+.poke-encounters > .poke-stats > ul > li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #fdc105;
+  font-weight: bold;
+}
+
+.poke-encounters > .poke-stats > ul > li > label {
+  margin: 5px 0;
+  margin-right: 7px;
+  text-align: center;
+}
+
+.poke-encounters > .poke-btns > button {
+  display: inline-block;
+  padding: 8px 15px;
+  margin-top: 20px;
+  margin-right: 5px;
+  background-color: #2a4396;
+  border: solid 0.2px #fdc105;
+  border-radius: 5px;
+  color: #fdc105;
+  text-decoration: none;
+  cursor: pointer;
+}

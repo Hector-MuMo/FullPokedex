@@ -1,0 +1,118 @@
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.pokemon-id {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  min-width: 750px;
+  height: auto;
+  margin: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: solid 4px #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 4px;
+  border-radius: 50%;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.pokemon-id > h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-family: inherit;
+  color: #fdc105;
+  text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
+}
+
+.pokemon-id > figure {
+  width: 200px;
+  animation-name: pokemon;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation-direction: alternate;
+}
+
+@keyframes pokemon {
+  0% {
+    transform: rotateX(-30deg);
+    transform: rotateY(-30deg);
+    transform: translate(0.5em) rotate(5deg) scale(0.8);
+  }
+  100% {
+    transform: rotateX(30deg);
+    transform: rotateY(30deg);
+    transform: translateX(-0.5em) rotate(-5deg) scale(1.3);
+  }
+}
+
+.pokemon-id > p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-family: inherit;
+  color: #fdc105;
+  text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
+}
+
+.pokemon-id > .poke-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  padding: 10px;
+  color: #ddd;
+  background: #2a4396;
+  border: solid 2px #fdc105;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-family: inherit;
+}
+
+.pokemon-id > .poke-stats > label {
+  text-align: left;
+  color: #fdc105;
+  font-weight: bold;
+}
+
+.pokemon-id > .poke-stats > span {
+  text-align: center;
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+
+.pokemon-id > .poke-stats > .abilities {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-weight: bold;
+}
+
+.pokemon-id > .poke-moves {
+  display: flex;
+  max-height: 150px;
+  overflow-y: auto;
+  background: #fdc105;
+  border: solid 2px #2a4396;
+  border-radius: 5px;
+}
+
+.pokemon-id > .poke-moves > ul > li {
+  color: #2a4396;
+  font-weight: bold;
+  padding: 1px 10px;
+  text-align: center;
+}
+
+.pokemon-id > .poke-btns > button {
+  display: inline-block;
+  padding: 8px 15px;
+  margin-top: 20px;
+  margin-right: 5px;
+  background-color: #2a4396;
+  border: solid 0.2px #fdc105;
+  border-radius: 5px;
+  color: #fdc105;
+  text-decoration: none;
+  cursor: pointer;
+}
