@@ -52,14 +52,12 @@ const PokeEncounters = () => {
   const encountersList =
     pokeData && pokeData.length !== 0
       ? pokeData.map((en, index) => (
-          <>
-            <li key={index}>
-              <label>Region:</label>
-              <span>{clearEncounter(en.location_area.name).region}</span>
-              <label>Route:</label>
-              <span>{clearEncounter(en.location_area.name).route}</span>{" "}
-            </li>
-          </>
+          <li key={index}>
+            <label>Region:</label>
+            <span>{clearEncounter(en.location_area.name).region}</span>
+            <label>Route:</label>
+            <span>{clearEncounter(en.location_area.name).route}</span>
+          </li>
         ))
       : "Not encounters found";
 

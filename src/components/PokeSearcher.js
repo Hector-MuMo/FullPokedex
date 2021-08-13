@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import pokedex from "../assets/pokedexLogo.svg";
 import { useAuth } from "../Context/DataContext";
 import "./PokeSearcher.css";
+import Settings from "./Settings";
+import { IoMdSettings } from "react-icons/io";
 
 const PokeSearcher = ({
   register,
@@ -12,8 +14,10 @@ const PokeSearcher = ({
   setCurrentPage,
   setMaxPageLimit,
   setMinPageLimit,
+  setPokePerPage,
 }) => {
   const { trainer } = useAuth();
+  const [showSettings, setShowSettings] = useState(false);
 
   const handleType = (type) => {
     setType(type);
@@ -21,10 +25,15 @@ const PokeSearcher = ({
     setCurrentPage(1);
     setMaxPageLimit(10);
     setMinPageLimit(0);
+    setPokePerPage(0);
   };
 
   return (
     <div className="poke-searcher">
+      <span className="settings-btn" onClick={() => setShowSettings(true)}>
+        <IoMdSettings />
+      </span>
+      {showSettings && <Settings setShowSettings={setShowSettings} />}
       <figure>
         <img src={pokedex} alt="pokedex" />
       </figure>

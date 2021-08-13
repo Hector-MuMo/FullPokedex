@@ -97,6 +97,10 @@ img {
   border-radius: 5px;
 }
 
+.pokemon-id > .poke-moves > ul {
+  list-style: none;
+}
+
 .pokemon-id > .poke-moves > ul > li {
   color: #2a4396;
   font-weight: bold;

@@ -1,0 +1,67 @@
+.settings-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  height: 150vh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.settings-container > .settings {
+  position: relative;
+  max-width: 500px;
+  min-width: 300px;
+  max-height: 500px;
+  min-height: 300px;
+  padding: 20px;
+  margin: 0 20px;
+  background-color: #000;
+  border-radius: 5px;
+}
+
+.settings-container > .settings .settings-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #dc3545;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.settings-container > .settings h3 {
+  font-size: 18px;
+  margin: 20px 0;
+  margin-top: 40px;
+  color: #fdc105;
+  text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
+  text-align: center;
+}
+
+.settings-container > .settings p {
+  font-size: 14px;
+  margin: 20px 0;
+  margin-top: 40px;
+  color: #fdc105;
+  text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
+  text-align: center;
+}
+
+.settings-container > .settings .settings-btns {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 15px;
+}
+
+.settings-container > .settings .settings-btns > button {
+  width: 50px;
+  height: 30px;
+  padding: 5px;
+  background-color: #2a4396;
+  color: #fdc105;
+  border: solid 0.5px #fdc105;
+  cursor: pointer;
+}

@@ -14,6 +14,7 @@
 
 .pokesearch-container {
   /* grid-column: 2 / span 4; */
+  position: relative;
   width: 50%;
   min-width: 550px;
   margin: 20px 0;

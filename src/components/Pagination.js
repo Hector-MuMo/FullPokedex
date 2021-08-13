@@ -1,4 +1,5 @@
 import React from "react";
+import { useAuth } from "../Context/DataContext";
 import "./Pagination.css";
 
 const Pagination = ({
@@ -13,19 +14,21 @@ const Pagination = ({
   funNextPage,
   funPrevPage,
 }) => {
+  const { numPages } = useAuth();
+
   //Handling the amount of pages
   const handlePageNums = () => {
     const pageNums = [];
     let typeNumPag, pokeNumPag;
 
     if (typeList) {
-      typeNumPag = Math.ceil(typeList.length / 4);
+      typeNumPag = Math.ceil(typeList.length / numPages);
 
       for (let i = 1; i <= typeNumPag; i++) {
         pageNums.push(i);
       }
     } else if (pokeList) {
-      pokeNumPag = Math.ceil(pokeList.length / 4);
+      pokeNumPag = Math.ceil(pokeList.length / numPages);
       for (let i = 1; i < pokeNumPag; i++) {
         pageNums.push(i);
       }

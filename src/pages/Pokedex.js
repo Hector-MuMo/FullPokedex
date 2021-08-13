@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import Pagination from "../components/Pagination";
 import PokeCard from "../components/PokeCard";
 import PokeSearcher from "../components/PokeSearcher";
+import { useAuth } from "../Context/DataContext";
 import "./Pokedex.css";
 
 const mainURL = `https://pokeapi.co/api/v2/pokemon/`;
@@ -21,6 +22,7 @@ const Pokedex = () => {
   const [minPageLimit, setMinPageLimit] = useState(0);
   const [pokePerPage, setPokePerPage] = useState(0);
   const [isBtnUse, setisBtnUse] = useState(false);
+  const { numPages } = useAuth();
 
   //First Fetch of Pokemon Data
   useEffect(() => {
@@ -33,7 +35,7 @@ const Pokedex = () => {
           setPokeList(null);
         } else {
           const data = await fetch(
-              `https://pokeapi.co/api/v2/pokemon?offset=0&limit=4`
+              `https://pokeapi.co/api/v2/pokemon/?limit=1500&offset=0`
             ),
             dataJson = await data.json();
           setPokeList(dataJson.results);
@@ -53,6 +55,7 @@ const Pokedex = () => {
     setInputData(data);
     setPokeList(null);
     setTypeList(null);
+    setisBtnUse(false);
     reset();
   };
 
@@ -67,82 +70,88 @@ const Pokedex = () => {
   };
 
   //Pagination
-  const typePag = () => {
-    return typeList.slice(pokePerPage, pokePerPage + 4);
+  const pokemonPage = () => {
+    if (typeList) {
+      return typeList.slice(pokePerPage, pokePerPage + numPages);
+    } else if (pokeList) {
+      return pokeList.slice(pokePerPage, pokePerPage + numPages);
+    }
   };
 
-  const nextPage = (url) => {
+  const nextPage = () => {
     setisBtnUse(false);
 
-    let length = typeList ? typeList.length : 0;
-
-    if (typeList && pokePerPage < length - 4) {
-      setPokePerPage(pokePerPage + 4);
+    if (typeList && pokePerPage < typeList.length - numPages) {
+      setPokePerPage(pokePerPage + numPages);
       setCurrentPage(currentPage + 1);
       if (currentPage + 1 > maxPageLimit) {
         setMaxPageLimit(maxPageLimit + pageNumLimit);
         setMinPageLimit(minPageLimit + pageNumLimit);
       }
-    } else if (pokeList) {
-      const getData = async () => {
-        const data = await fetch(url),
-          dataJson = await data.json();
-        setPokeList(dataJson.results);
-        setNextPag(dataJson.next);
-        setPrevPag(dataJson.previous);
-        setCurrentPage(currentPage + 1);
-      };
-
-      getData();
+    } else if (pokeList && pokePerPage < pokeList.length - numPages) {
+      setPokePerPage(pokePerPage + numPages);
+      setCurrentPage(currentPage + 1);
+      if (currentPage + 1 > maxPageLimit) {
+        setMaxPageLimit(maxPageLimit + pageNumLimit);
+        setMinPageLimit(minPageLimit + pageNumLimit);
+      }
     }
   };
 
-  const prevPage = (url) => {
+  const prevPage = () => {
     setisBtnUse(false);
 
     if (typeList && pokePerPage > 0) {
-      setPokePerPage(pokePerPage - 4);
+      setPokePerPage(pokePerPage - numPages);
       setCurrentPage(currentPage - 1);
 
       if ((currentPage - 1) % pageNumLimit === 0) {
         setMaxPageLimit(maxPageLimit - pageNumLimit);
         setMinPageLimit(minPageLimit - pageNumLimit);
       }
-    } else if (pokeList) {
-      const getData = async () => {
-        const data = await fetch(url),
-          dataJson = await data.json();
-        setPokeList(dataJson.results);
-        setNextPag(dataJson.next);
-        setPrevPag(dataJson.previous);
-        setCurrentPage(currentPage + 1);
-      };
-
-      getData();
+    } else if (pokeList && pokePerPage > 0) {
+      setPokePerPage(pokePerPage - numPages);
+      setCurrentPage(currentPage - 1);
+      if ((currentPage - 1) % pageNumLimit === 0) {
+        setMaxPageLimit(maxPageLimit - pageNumLimit);
+        setMinPageLimit(minPageLimit - pageNumLimit);
+      }
     }
   };
 
-  const lastPoke = currentPage * 4;
-  const firstPoke = lastPoke - 4;
-  const currentPoke = typeList && typeList.slice(firstPoke, lastPoke);
+  const lastPoke = currentPage * numPages;
+  const firstPoke = lastPoke - numPages;
+
+  const switchPageBtn = () => {
+    if (typeList) return typeList.slice(firstPoke, lastPoke);
+    else if (pokeList) return pokeList.slice(firstPoke, lastPoke);
+    else return [];
+  };
+
+  const currentPoke = switchPageBtn();
 
   const page = (num) => {
     setCurrentPage(num);
+    setPokePerPage((num - 1) * numPages);
     setisBtnUse(true);
   };
 
   //Create list of PokeCards
   const printPokemons = () => {
     if (isBtnUse) {
-      return currentPoke.map((u, index) => (
-        <PokeCard key={"0" + index} pokeUrl={u.pokemon.url} />
-      ));
+      return currentPoke.map((u, index) => {
+        return typeList ? (
+          <PokeCard key={"0" + index} pokeUrl={u.pokemon.url} />
+        ) : (
+          <PokeCard key={"0" + index} pokeUrl={u.url} />
+        );
+      });
     } else if (typeList)
-      return typePag().map((u, index) => (
+      return pokemonPage().map((u, index) => (
         <PokeCard key={"0" + index} pokeUrl={u.pokemon.url} />
       ));
     else if (pokeList)
-      return pokeList.map((u, index) => (
+      return pokemonPage().map((u, index) => (
         <PokeCard key={"0" + index} pokeUrl={u.url} />
       ));
     else return <PokeCard key={1} pokeUrl={searchPokemon()} />;
@@ -161,6 +170,7 @@ const Pokedex = () => {
           setCurrentPage={setCurrentPage}
           setMaxPageLimit={setMaxPageLimit}
           setMinPageLimit={setMinPageLimit}
+          setPokePerPage={setPokePerPage}
         />
       </section>
       <section className="pokecard-container">{Pokemon}</section>

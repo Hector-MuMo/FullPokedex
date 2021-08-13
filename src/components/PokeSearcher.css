@@ -4,6 +4,21 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  position: relative;
+}
+
+.poke-searcher > .settings-btn {
+  font-size: 20px;
+  padding: 5px;
+  padding-bottom: 0;
+  background-color: #2a4396;
+  color: #fdc105;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: solid 2px #fdc105;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .poke-searcher > figure {
