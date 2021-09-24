@@ -46,7 +46,7 @@
 .poke-searcher > form > h3 {
   text-align: center;
   margin-bottom: 10px;
-  font-family: "Press Start 2P", sans-serif;
+  font-family: 'Press Start 2P', sans-serif;
   color: #fdc105;
   text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
 }
@@ -54,7 +54,7 @@
 .poke-searcher > form > label {
   text-align: center;
   margin-bottom: 10px;
-  font-family: "Press Start 2P", sans-serif;
+  font-family: 'Press Start 2P', sans-serif;
   color: #fdc105;
   text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
 }
@@ -67,7 +67,7 @@
   text-align: center;
   border: solid 2px #2a4396;
   border-radius: 5px;
-  font-family: "Press Start 2P", sans-serif;
+  font-family: 'Press Start 2P', sans-serif;
 }
 
 .poke-searcher > form > button {
@@ -84,7 +84,7 @@
 .poke-searcher > p {
   text-align: center;
   margin-bottom: 10px;
-  font-family: "Press Start 2P", sans-serif;
+  font-family: 'Press Start 2P', sans-serif;
   color: #fdc105;
   text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
 }
@@ -97,11 +97,11 @@
   text-align: center;
   border: solid 2px #2a4396;
   border-radius: 5px;
-  font-family: "Press Start 2P", sans-serif;
+  font-family: 'Press Start 2P', sans-serif;
 }
 
 .poke-searcher > select > option {
-  font-family: "Press Start 2P", sans-serif;
+  font-family: 'Press Start 2P', sans-serif;
 }
 
 .poke-searcher .type-btns {
@@ -174,4 +174,91 @@
 }
 .type-btns > .type-water {
   background-color: #2a8aeb;
+}
+
+.poke-searcher .color-btns {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+}
+
+.color-btns > button {
+  padding: 3px;
+  border: solid 2px#fff;
+  border-radius: 5px;
+  margin: 2px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+  font-size: 10px;
+}
+
+.color-btns > .color-black {
+  background-color: #000000;
+}
+
+.color-btns > .color-blue {
+  background-color: #246abb;
+}
+
+.color-btns > .color-brown {
+  background-color: #dd8b558e;
+}
+
+.color-btns > .color-gray {
+  background-color: #b1afaf;
+}
+
+.color-btns > .color-green {
+  background-color: #27c94a;
+}
+
+.color-btns > .color-pink {
+  background-color: #e0119b;
+}
+
+.color-btns > .color-purple {
+  background-color: #bb2cbb;
+}
+
+.color-btns > .color-red {
+  background-color: #e40b0b;
+}
+
+.color-btns > .color-white {
+  background-color: #ececec;
+  text-align: black;
+}
+
+.color-btns > .color-yellow {
+  background-color: #bac247;
+}
+
+.gender-btns > button {
+  padding: 3px;
+  border: solid 2px#fff;
+  border-radius: 5px;
+  margin: 2px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+  font-size: 10px;
+}
+
+.poke-searcher .gender-btns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+.gender-btns > .gender-male {
+  background-color: #4c64ee;
+}
+
+.gender-btns > .gender-female {
+  background-color: #d63ce4;
+}
+
+.gender-btns > .gender-undefined {
+  background-color: #f0d95a;
 }

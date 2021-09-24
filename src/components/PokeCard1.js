@@ -1,43 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { useHistory, useRouteMatch } from 'react-router-dom';
-import { useAuth } from '../Context/DataContext';
-import capitalizeName from '../helpers/capitalizeName';
-import getIdFromUrl from '../helpers/getIdFromUrl';
-import randomIndex from '../helpers/randomIndex';
-import './PokeCard.css';
-
-const mainURL = `https://pokeapi.co/api/v2/pokemon/`;
+import React, { useEffect, useState } from "react";
+import { useHistory, useRouteMatch } from "react-router-dom";
+import { useAuth } from "../Context/DataContext";
+import capitalizeName from "../helpers/capitalizeName";
+import randomIndex from "../helpers/randomIndex";
+import "./PokeCard.css";
 
 const PokeCard = ({ pokeUrl }) => {
   const { url } = useRouteMatch();
   const history = useHistory();
   const { signIn } = useAuth();
   const [pokemon, setPokemon] = useState(null);
-  const [id, setId] = useState('');
+  const [id, setId] = useState("");
 
   //Styling types elements
   const handleStylish = (type) => {
     const stylesTypes = {
-      bug: '#acbb20',
-      dark: '#523d2f',
-      dragon: '#765fe0',
-      electric: '#fbb917',
-      fairy: '#f6b3f6',
-      fighting: '#81341d',
-      fire: '#e63b0b',
-      flying: '#98a9f4',
-      ghost: '#5e5eaf',
-      grass: '#72c235',
-      ground: '#cead53',
-      ice: '#90e0fa',
-      normal: '#c3bdb4',
-      poison: '#914492',
-      psychic: '#ea447e',
-      rock: '#9e863d',
-      steel: '#aeaebd',
-      water: '#2a8aeb',
+      bug: "#acbb20",
+      dark: "#523d2f",
+      dragon: "#765fe0",
+      electric: "#fbb917",
+      fairy: "#f6b3f6",
+      fighting: "#81341d",
+      fire: "#e63b0b",
+      flying: "#98a9f4",
+      ghost: "#5e5eaf",
+      grass: "#72c235",
+      ground: "#cead53",
+      ice: "#90e0fa",
+      normal: "#c3bdb4",
+      poison: "#914492",
+      psychic: "#ea447e",
+      rock: "#9e863d",
+      steel: "#aeaebd",
+      water: "#2a8aeb",
     };
-    let colorType = { backgroundColor: '', boxShadow: "'' 0px 5px 15px" };
+    let colorType = { backgroundColor: "", boxShadow: "'' 0px 5px 15px" };
     for (const key in stylesTypes) {
       if (type === key) {
         colorType = {
@@ -54,10 +51,8 @@ const PokeCard = ({ pokeUrl }) => {
     const getPokemon = async () => {
       try {
         if (pokeUrl) {
-          let id = getIdFromUrl(pokeUrl);
-          let data = await fetch(`${mainURL}${id}`),
+          let data = await fetch(pokeUrl),
             pokeInfo = await data.json();
-
           setPokemon(pokeInfo);
         }
       } catch (error) {

@@ -1,9 +1,11 @@
 import React from 'react';
 import { useAuth } from '../Context/DataContext';
-import './Pagination.css';
+import './Paginations.css';
 
 const Pagination = ({
   typeList,
+  colorList,
+  genderList,
   pokeList,
   page,
   currentPage,
@@ -25,6 +27,16 @@ const Pagination = ({
       typeNumPag = Math.ceil(typeList.length / numPages);
 
       for (let i = 1; i <= typeNumPag; i++) {
+        pageNums.push(i);
+      }
+    } else if (colorList) {
+      pokeNumPag = Math.ceil(colorList.length / numPages);
+      for (let i = 1; i < pokeNumPag; i++) {
+        pageNums.push(i);
+      }
+    } else if (genderList) {
+      pokeNumPag = Math.ceil(genderList.length / numPages);
+      for (let i = 1; i < pokeNumPag; i++) {
         pageNums.push(i);
       }
     } else if (pokeList) {
