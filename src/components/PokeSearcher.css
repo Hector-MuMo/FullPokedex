@@ -1,264 +1,293 @@
 .poke-searcher {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
 }
 
-.poke-searcher > .settings-btn {
-  font-size: 20px;
-  padding: 5px;
-  padding-bottom: 0;
-  background-color: #2a4396;
-  color: #fdc105;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: solid 2px #fdc105;
-  border-radius: 10px;
-  cursor: pointer;
+.poke-searcher>.settings-btn {
+    font-size: 20px;
+    padding: 5px;
+    padding-bottom: 0;
+    background-color: #2a4396;
+    color: #fdc105;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: solid 2px #fdc105;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-.poke-searcher > figure {
-  max-width: 55%;
-  min-width: 300px;
-  margin-bottom: 20px;
-  animation-name: puff-in-center;
-  animation-duration: 3s;
-  animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) both;
-  animation-direction: normal;
+.poke-searcher>figure {
+    max-width: 55%;
+    min-width: 300px;
+    margin-bottom: 20px;
+    animation-name: puff-in-center;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715) both;
+    animation-direction: normal;
 }
 
-.poke-searcher > figure > img {
-  width: 100%;
-  height: 100%;
+.poke-searcher>figure>img {
+    width: 100%;
+    height: 100%;
 }
 
-.poke-searcher > form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.poke-searcher>form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.poke-searcher > form > h3 {
-  text-align: center;
-  margin-bottom: 10px;
-  font-family: 'Press Start 2P', sans-serif;
-  color: #fdc105;
-  text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
+.poke-searcher>form>h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Press Start 2P', sans-serif;
+    color: #fdc105;
+    text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
 }
 
-.poke-searcher > form > label {
-  text-align: center;
-  margin-bottom: 10px;
-  font-family: 'Press Start 2P', sans-serif;
-  color: #fdc105;
-  text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
+.poke-searcher>form>label {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Press Start 2P', sans-serif;
+    color: #fdc105;
+    text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
 }
 
-.poke-searcher > form > input {
-  max-width: 250px;
-  margin-bottom: 10px;
-  padding: 5px;
-  font-size: 12px;
-  text-align: center;
-  border: solid 2px #2a4396;
-  border-radius: 5px;
-  font-family: 'Press Start 2P', sans-serif;
+.poke-searcher>form>input {
+    max-width: 250px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+    border: solid 2px #2a4396;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', sans-serif;
 }
 
-.poke-searcher > form > button {
-  max-width: 150px;
-  padding: 8px 15px;
-  margin: 10px;
-  background-color: #2a4396;
-  border: solid 0.2px #fdc105;
-  border-radius: 5px;
-  color: #fdc105;
-  cursor: pointer;
+.poke-searcher>form>button {
+    max-width: 150px;
+    padding: 8px 15px;
+    margin: 10px;
+    background-color: #2a4396;
+    border: solid 0.2px #fdc105;
+    border-radius: 5px;
+    color: #fdc105;
+    cursor: pointer;
 }
 
-.poke-searcher > p {
-  text-align: center;
-  margin-bottom: 10px;
-  font-family: 'Press Start 2P', sans-serif;
-  color: #fdc105;
-  text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
+.poke-searcher>p {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Press Start 2P', sans-serif;
+    color: #fdc105;
+    text-shadow: -3px 0 #2a4396, 0 3px #2a4396, 3px 0 #2a4396, 0 -3px #2a4396;
 }
 
-.poke-searcher > select {
-  max-width: 250px;
-  margin-bottom: 10px;
-  padding: 5px;
-  font-size: 12px;
-  text-align: center;
-  border: solid 2px #2a4396;
-  border-radius: 5px;
-  font-family: 'Press Start 2P', sans-serif;
+.poke-searcher>select {
+    max-width: 250px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+    border: solid 2px #2a4396;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', sans-serif;
 }
 
-.poke-searcher > select > option {
-  font-family: 'Press Start 2P', sans-serif;
+.poke-searcher>select>option {
+    font-family: 'Press Start 2P', sans-serif;
 }
 
-.poke-searcher .type-btns {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto;
+.type-btns {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
 }
 
-.type-btns > button {
-  padding: 3px;
-  border: solid 2px#fff;
-  border-radius: 5px;
-  margin: 2px;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-  font-size: 10px;
+.type-btns>button {
+    padding: 3px;
+    border: solid 2px#fff;
+    border-radius: 5px;
+    margin: 2px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    font-size: 10px;
 }
 
-.type-btns > .type-bug {
-  background-color: #acbb20;
-}
-.type-btns > .type-dragon {
-  background-color: #765fe0;
-}
-.type-btns > .type-dark {
-  background-color: #523d2f;
-}
-.type-btns > .type-electric {
-  background-color: #fbb917;
-}
-.type-btns > .type-fairy {
-  background-color: #f6b3f6;
-}
-.type-btns > .type-fighting {
-  background-color: #81341d;
-}
-.type-btns > .type-fire {
-  background-color: #e63b0b;
-}
-.type-btns > .type-flying {
-  background-color: #98a9f4;
-}
-.type-btns > .type-ghost {
-  background-color: #5e5eaf;
-}
-.type-btns > .type-grass {
-  background-color: #72c235;
-}
-.type-btns > .type-ground {
-  background-color: #cead53;
-}
-.type-btns > .type-ice {
-  background-color: #90e0fa;
-}
-.type-btns > .type-normal {
-  background-color: #c3bdb4;
-}
-.type-btns > .type-poison {
-  background-color: #914492;
-}
-.type-btns > .type-psychic {
-  background-color: #ea447e;
-}
-.type-btns > .type-rock {
-  background-color: #9e863d;
-}
-.type-btns > .type-steel {
-  background-color: #aeaebd;
-}
-.type-btns > .type-water {
-  background-color: #2a8aeb;
+.type-btns>.type-bug {
+    background-color: #acbb20;
 }
 
-.poke-searcher .color-btns {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto;
+.type-btns>.type-dragon {
+    background-color: #765fe0;
 }
 
-.color-btns > button {
-  padding: 3px;
-  border: solid 2px#fff;
-  border-radius: 5px;
-  margin: 2px;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-  font-size: 10px;
+.type-btns>.type-dark {
+    background-color: #523d2f;
 }
 
-.color-btns > .color-black {
-  background-color: #000000;
+.type-btns>.type-electric {
+    background-color: #fbb917;
 }
 
-.color-btns > .color-blue {
-  background-color: #246abb;
+.type-btns>.type-fairy {
+    background-color: #f6b3f6;
 }
 
-.color-btns > .color-brown {
-  background-color: #dd8b558e;
+.type-btns>.type-fighting {
+    background-color: #81341d;
 }
 
-.color-btns > .color-gray {
-  background-color: #b1afaf;
+.type-btns>.type-fire {
+    background-color: #e63b0b;
 }
 
-.color-btns > .color-green {
-  background-color: #27c94a;
+.type-btns>.type-flying {
+    background-color: #98a9f4;
 }
 
-.color-btns > .color-pink {
-  background-color: #e0119b;
+.type-btns>.type-ghost {
+    background-color: #5e5eaf;
 }
 
-.color-btns > .color-purple {
-  background-color: #bb2cbb;
+.type-btns>.type-grass {
+    background-color: #72c235;
 }
 
-.color-btns > .color-red {
-  background-color: #e40b0b;
+.type-btns>.type-ground {
+    background-color: #cead53;
 }
 
-.color-btns > .color-white {
-  background-color: #ececec;
-  text-align: black;
+.type-btns>.type-ice {
+    background-color: #90e0fa;
 }
 
-.color-btns > .color-yellow {
-  background-color: #bac247;
+.type-btns>.type-normal {
+    background-color: #c3bdb4;
 }
 
-.gender-btns > button {
-  padding: 3px;
-  border: solid 2px#fff;
-  border-radius: 5px;
-  margin: 2px;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-  font-size: 10px;
+.type-btns>.type-poison {
+    background-color: #914492;
 }
 
-.poke-searcher .gender-btns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+.type-btns>.type-psychic {
+    background-color: #ea447e;
 }
 
-.gender-btns > .gender-male {
-  background-color: #4c64ee;
+.type-btns>.type-rock {
+    background-color: #9e863d;
 }
 
-.gender-btns > .gender-female {
-  background-color: #d63ce4;
+.type-btns>.type-steel {
+    background-color: #aeaebd;
 }
 
-.gender-btns > .gender-undefined {
-  background-color: #f0d95a;
+.type-btns>.type-water {
+    background-color: #2a8aeb;
+}
+
+.color-btns {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}
+
+.color-btns>button {
+    padding: 3px;
+    border: solid 2px#fff;
+    border-radius: 5px;
+    margin: 2px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    font-size: 10px;
+}
+
+.color-btns>.color-black {
+    background-color: #000000;
+}
+
+.color-btns>.color-blue {
+    background-color: #246abb;
+}
+
+.color-btns>.color-brown {
+    background-color: #dd8b558e;
+}
+
+.color-btns>.color-gray {
+    background-color: #b1afaf;
+}
+
+.color-btns>.color-green {
+    background-color: #27c94a;
+}
+
+.color-btns>.color-pink {
+    background-color: #e0119b;
+}
+
+.color-btns>.color-purple {
+    background-color: #bb2cbb;
+}
+
+.color-btns>.color-red {
+    background-color: #e40b0b;
+}
+
+.color-btns>.color-white {
+    background-color: #ececec;
+    text-align: black;
+}
+
+.color-btns>.color-yellow {
+    background-color: #bac247;
+}
+
+.gender-btns {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}
+
+.gender-btns>button {
+    padding: 3px;
+    border: solid 2px#fff;
+    border-radius: 5px;
+    margin: 2px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    font-size: 10px;
+}
+
+.gender-btns>.gender-male {
+    background-color: #4c64ee;
+}
+
+.gender-btns>.gender-female {
+    background-color: #d63ce4;
+}
+
+.gender-btns>.gender-undefined {
+    background-color: #f0d95a;
+}
+
+@media screen and (min-width: 700px) {
+
+    .type-btns,
+    .color-btns,
+    .gender-btns {
+        width: 300px;
+    }
 }
